@@ -1,25 +1,106 @@
-<div class="w-full h-full bg-[#ebf3fd] py-5 px-32 flex flex-col gap-2">
+<div
+  id="appContainer"
+  class="w-full h-full bg-[#ebf3fd] lg:py-5 lg:px-32 flex flex-col gap-2"
+>
   <!--  Below header tag is representing the header of the web application It will have display two tags: -
         1. Image and title of the application
-        2. Button linked to the GitHub repo of the application 
+        2. Internal hyperlinks to go to input forms, table views and chart views.
+        3. Button linked to the GitHub repo of the application 
   -->
-  <header class="w-full h-16 p-5 gap-2 flex items-center justify-between">
-    <div id="logo" class="flex items-center justify-center gap-1">
-      <img src="/fylelogo.JPG" alt="logo" class="h-10 w-10" />
-      <h2 class="font-mono font-bold text-2xl">
-        fyle.<span class="font-mono font-medium">Health</span>
-      </h2>
+  <header
+    class="w-full h-16 p-5 gap-2 flex items-center justify-between sticky top-0 z-10 bg-[#ebf3fd] border-b-2"
+  >
+    <a href="#appContainer">
+      <div id="logo" class="flex items-center justify-center gap-1">
+        <img src="/fylelogo.JPG" alt="logo" class="h-10 w-10" />
+        <h2 class="font-mono font-bold text-2xl">
+          fyle.<span class="font-mono font-medium">Health</span>
+        </h2>
+      </div>
+    </a>
+
+    <!-- Menu for large screens -->
+    <div id="menuContainer" class="hidden lg:flex items-center gap-10">
+      <ul class="flex gap-3 p-3">
+        <li
+          class="font-sans font-semibold text-lg hover:text-[#ff3366] text-black"
+        >
+          <a href="#heroSection">Input Form</a>
+        </li>
+        <li
+          class="font-sans font-semibold text-lg hover:text-[#ff3366] text-black"
+        >
+          <a href="#tableContainer">Table View</a>
+        </li>
+        <li
+          class="font-sans font-semibold text-lg hover:text-[#ff3366] text-black"
+        >
+          <a href="#chartContainer">Chart View</a>
+        </li>
+      </ul>
+      <a href="https://github.com/sumitkrjha/Fyle.health" target="_blank">
+        <button
+          id="githubLink"
+          class="bg-[#24292F] hover:bg-[#1a1c20] font-medium rounded-full text-sm h-12 w-32 p-4 flex items-center justify-center cursor-pointer hover:shadow-lg hover:shadow-[#1a1c20]"
+        >
+          <img src="/github.svg" alt="github logo" class="h-6 w-6" />
+          <span class="text-white">GitHub</span>
+        </button>
+      </a>
     </div>
+
+    <!-- Hamburger button (visible on small screens) -->
+    <button id="menuToggle" class="lg:hidden text-3xl" (click)="toggleMenu()">
+      ☰
+    </button>
+  </header>
+
+  <!-- Sidebar (Appears when menuOpen is true) -->
+  @if (menuOpen) {
+  <div
+    class="fixed inset-0 bg-black bg-opacity-50 z-20"
+    (click)="toggleMenu()"
+  ></div>
+
+  <div
+    id="sidebar"
+    class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg p-5 flex flex-col gap-5 z-30 transform transition-transform duration-300"
+  >
+    <!-- Close Button -->
+    <button class="text-3xl self-end" (click)="toggleMenu()">×</button>
+
+    <!-- Sidebar Menu Items -->
+    <ul class="flex flex-col gap-3">
+      <li
+        class="font-sans font-semibold text-lg hover:text-[#ff3366] text-black"
+      >
+        <a href="#heroSection" (click)="toggleMenu()">Input Form</a>
+      </li>
+      <li
+        class="font-sans font-semibold text-lg hover:text-[#ff3366] text-black"
+      >
+        <a href="#tableContainer" (click)="toggleMenu()">Table View</a>
+      </li>
+      <li
+        class="font-sans font-semibold text-lg hover:text-[#ff3366] text-black"
+      >
+        <a href="#chartContainer" (click)="toggleMenu()">Chart View</a>
+      </li>
+    </ul>
+
+    <!-- GitHub Button -->
     <a href="https://github.com/sumitkrjha/Fyle.health" target="_blank">
       <button
         id="githubLink"
-        class="bg-[#24292F] hover:bg-[#1a1c20] font-medium rounded-full text-sm h-12 w-32 p-4 gap-2 flex items-center justify-center cursor-pointer hover:shadow-lg hover:shadow-[#1a1c20]"
+        class="bg-[#24292F] hover:bg-[#1a1c20] font-medium rounded-full text-sm h-12 w-32 p-4 flex items-center justify-center cursor-pointer hover:shadow-lg hover:shadow-[#1a1c20]"
       >
         <img src="/github.svg" alt="github logo" class="h-6 w-6" />
         <span class="text-white">GitHub</span>
       </button>
     </a>
-  </header>
+  </div>
+  }
+
   <!--  App-input-form component below, path="./app/input-form/input-form-component.ts
         Purpose: This component has 2 purpose, as mentioned below: -
         1. To Display the hero text and a descriptive sentence to give the user idea of the application

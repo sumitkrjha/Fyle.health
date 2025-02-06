@@ -3,13 +3,16 @@
         2. Input form that takes the input from the user, such as userName, workoutType and workoutDuration
         (To know more about the form details please go to the input-form-component.ts file)
   "-->
-<section id="heroSection" class="w-full h-full p-10 flex">
+<section
+  id="heroSection"
+  class="w-full h-full lg:p-10 flex flex-col lg:flex-row"
+>
   <!-- Div with the id "heroContainer" is fulfilling the purpose no 1, stated above, restated below: -
        -> To Display the hero text and a descriptive sentence to give the user idea of the application
     -->
   <div
     id="heroContainer"
-    class="h-auto basis-1/2 flex flex-col items-center justify-center px-14 py-24 gap-5"
+    class="h-auto lg:basis-1/2 flex flex-col items-center justify-center px-14 py-24 gap-5"
   >
     <h1 id="heroText" class="h-auto w-full text-5xl font-serif font-semibold">
       Fitness Tracker <br />That
@@ -31,7 +34,10 @@
        2. Save Button to save the user input in the localStorage.
     -->
 
-  <div id="formContainer" class="h-auto basis-1/2 py-10 px-20">
+  <div
+    id="formContainer"
+    class="h-auto lg:basis-1/2 lg:py-10 py-5 lg:px-20 px-5"
+  >
     <h1 id="formHeading" class="font-mono font-bold text-4xl mb-3">
       Work<span class="underline decoration-[#ff3366]">out De</span>tails
     </h1>
@@ -68,7 +74,7 @@
         class="h-12 w-full py-2 px-3 border-2 border-black rounded-full placeholder:text-md placeholder:text-gray-900"
       />
     </div>
-    <a href="#workoutTable">
+    <a href="#searchAndFilterContainer">
       <button
         type="submit"
         (click)="saveUser()"

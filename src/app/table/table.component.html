@@ -7,7 +7,7 @@
         4.2. Workout type
         4.3. Workout duration
 -->
-<section id="tableContainer" class="h-auto w-full p-5">
+<section id="tableContainer" class="h-auto w-full p-5 static">
   <!-- Heading, below, is to give the component a title -->
   <h1 id="tableHeading" class="font-mono font-bold text-4xl mb-3">
     Work<span class="underline decoration-[#ff3366]">out Ta</span>ble
@@ -18,7 +18,10 @@
        2. A select option to select the workout type facilitating filter by workout type.
        3. A reset button which will reset the filter and search box
   -->
-  <div id="searchAndFilterContainer" class="w-full h-auto p-5">
+  <div
+    id="searchAndFilterContainer"
+    class="w-full h-auto p-5 flex lg:flex-row flex-col lg:items-left items-center lg:gap-0 gap-2"
+  >
     <!-- Search by Username -->
     <input
       type="text"
@@ -32,7 +35,7 @@
     <select
       [(ngModel)]="selectedWorkoutType"
       (change)="getFilteredUsers()"
-      class="h-12 w-60 ml-3 py-2 px-3 border-2 border-black rounded-full text-md cursor-pointer"
+      class="h-12 w-60 lg:ml-3 py-2 px-3 border-2 border-black rounded-full text-md cursor-pointer"
     >
       <option value="" disabled selected>Select Workout Type</option>
       <option value="Yoga">Yoga</option>
@@ -44,7 +47,7 @@
     <!-- Button to reset the search and filter -->
     <button
       (click)="resetFilters()"
-      class="w-auto h-auto py-3 px-5 ml-3 mt-2 text-white border-2 border-[#ff3366] bg-[#ff3366] rounded-full cursor-pointer font-semibold hover:bg-white hover:text-black hover:shadow-md hover:shadow-[#ff3366]"
+      class="w-auto h-auto py-3 px-5 lg:ml-3 mt-2 text-white border-2 border-[#ff3366] bg-[#ff3366] rounded-full cursor-pointer font-semibold hover:bg-white hover:text-black hover:shadow-md hover:shadow-[#ff3366]"
     >
       Reset Search & Filters
     </button>
@@ -82,7 +85,10 @@
       3. One select element to change the row per page.
   -->
   <!-- Pagination controls -->
-  <div class="flex items-center justify-between mt-4">
+  <div
+    id="paginationContainer"
+    class="flex flex-col lg:flex-row items-center lg:justify-between mt-4 lg:gap-0 gap-3"
+  >
     <!-- Items per page selection -->
     <div>
       <label for="itemsPerPage" class="mr-2">Items per page:</label>
@@ -99,11 +105,11 @@
 
     <!-- Pagination counter -->
     <div>
-      <span>{{ currentPage }} / {{ totalPages }}</span>
+      <span>Page {{ currentPage }} / {{ totalPages }}</span>
     </div>
 
     <!-- Pagination buttons -->
-    <div>
+    <div id="paginationButtons" class="flex gap-2">
       <button
         (click)="previousPage()"
         [disabled]="currentPage === 1"
