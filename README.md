@@ -19,6 +19,24 @@
 
 ---
 
+## 📸 Screenshots
+
+# App View
+  ## Home/Form Input
+  ![Screenshot (25)](https://github.com/user-attachments/assets/d048ffb6-3196-4d5d-9836-ca304589a30b)
+
+  ## Table 
+  ![Screenshot (26)](https://github.com/user-attachments/assets/91087e87-1eb8-4404-ad78-e31bede26473)
+
+  ## Chart
+  ![Screenshot (27)](https://github.com/user-attachments/assets/255e207e-a281-4545-a736-cdab03c3229c)
+
+
+# Code Coverage Report
+ ![coverage report](https://github.com/user-attachments/assets/327f9c9e-1b8e-4fc5-b3d8-e1231ce2f505)
+
+
+
 ## 🛠️ Tech Stack
 
 | Technology                  | Purpose                         |
@@ -28,39 +46,6 @@
 | **PrimeNG Chart**           | Data visualization              |
 | **RxJS (BehaviorSubjects)** | State management & reactivity   |
 | **Karma & Jasmine**         | Unit testing with 100% coverage |
-
----
-
-## 🎯 How to Run the Project
-
-### 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/your-github-username/Fyle.health.git
-cd Fyle.health
-```
-
-### 2️⃣ Install Dependencies
-
-```bash
-npm install
-```
-
-### 3️⃣ Run the Application
-
-```bash
-ng serve
-```
-
-Then, open **http://localhost:4200/** in your browser.
-
-### 4️⃣ Run Tests
-
-```bash
-ng test --code-coverage
-```
-
-Check the coverage report in `coverage/index.html`.
 
 ---
 
@@ -87,9 +72,38 @@ fyle.health/
 
 ---
 
-## 📸 Screenshots
+## 🎯 How to Run the Project
 
-_(Add relevant screenshots of the app UI here)_
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/sumitkrjha/Fyle.health.git
+cd Fyle.health
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run the Application
+
+```bash
+ng serve
+```
+
+Then, open **http://localhost:4200/** in your browser.
+
+### 4️⃣ Run Tests
+
+```bash
+ng test --code-coverage
+```
+
+Check the coverage report in `coverage/index.html`.
+
+---
 
 ## 🏆 Author
 
