@@ -2,6 +2,7 @@
 
 🚀 A **Single Page Application (SPA)** built using **Angular 19**, **Tailwind CSS**, and **PrimeNG Chart**, allowing users to log workouts, filter data, and visualize workout duration.
 
+  ## Hosted at : [Fyle.health-sumit.netlify.app](https://fyle.health-sumit.netlify.app)
 ---
 
 ## 🔥 Features
