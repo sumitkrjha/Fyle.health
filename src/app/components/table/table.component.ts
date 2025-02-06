@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserdataService } from '../userdata.service';
-import { DisplayUser } from '../display-user';
-import { workoutType } from '../user-type';
+import { UserdataService } from '../../services/userdata.service';
+import { DisplayUser } from '../../interfaces/display-user';
+import { workoutType } from '../../interfaces/user-type';
 import { FormsModule } from '@angular/forms';
 
 @Component({

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { UserdataService } from '../userdata.service';
+import { UserdataService } from '../../services/userdata.service';
+
 @Component({
   selector: 'app-input-form',
   imports: [FormsModule],

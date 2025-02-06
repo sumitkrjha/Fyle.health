@@ -1,59 +1,100 @@
-# Fylehealth
+# 🏋️‍♂️ Fyle.health – Angular 19 SPA
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+🚀 A **Single Page Application (SPA)** built using **Angular 19**, **Tailwind CSS**, and **PrimeNG Chart**, allowing users to log workouts, filter data, and visualize workout duration.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🔥 Features
+
+✅ **User Input Form** – Enter name, select a workout type, and log workout duration (in minutes).  
+✅ **Dynamic Table View** – Displays all users with:
+
+- **Search** by name
+- **Filter** by workout type
+- **Dynamic Pagination** – Adjust rows per page via a select option  
+  ✅ **Interactive Charts** – Visualize workout duration per user with **PrimeNG Chart**.  
+  ✅ **Reactive Data Handling** – Ensures **seamless data consistency** using **BehaviorSubjects (RxJS)**.  
+  ✅ **Fully Responsive** – Works across **desktop, tablet, and mobile screens**.  
+  ✅ **100% Test Coverage** – Thoroughly tested with **Karma**, ensuring high reliability.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology                  | Purpose                         |
+| --------------------------- | ------------------------------- |
+| **Angular 19**              | Frontend framework              |
+| **Tailwind CSS**            | Styling                         |
+| **PrimeNG Chart**           | Data visualization              |
+| **RxJS (BehaviorSubjects)** | State management & reactivity   |
+| **Karma & Jasmine**         | Unit testing with 100% coverage |
+
+---
+
+## 🎯 How to Run the Project
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-github-username/Fyle.health.git
+cd Fyle.health
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run the Application
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then, open **http://localhost:4200/** in your browser.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 4️⃣ Run Tests
 
 ```bash
-ng generate component component-name
+ng test --code-coverage
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Check the coverage report in `coverage/index.html`.
 
-```bash
-ng generate --help
+---
+
+## 📂 Folder Structure
+
+```
+fyle.health/
+│── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── chart/
+│   │   │   ├── input-form/
+│   │   │   ├── table/
+│   │   ├── services/
+│   │   │   ├── userdata.service.ts
+│   │   ├── interface/
+│   │   │   ├── display-user.ts
+│   │   │   ├── user-type.ts
+│   │   ├── app.component.ts
+│── angular.json
+│── package.json
+│── README.md
 ```
 
-## Building
+---
 
-To build the project run:
+## 📸 Screenshots
 
-```bash
-ng build
-```
+_(Add relevant screenshots of the app UI here)_
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🏆 Author
 
-## Running unit tests
+👤 **Sumit Kumar Jha**  
+📧 [jhasumit4742@gmail.com](mailto:jhasumit4742@gmail.com)  
+🔗 [Portfolio](https://sumitkrjha.onrender.com) | [GitHub](https://github.com/your-github-username) | [LinkedIn](https://www.linkedin.com/in/sumitkrjha/)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---

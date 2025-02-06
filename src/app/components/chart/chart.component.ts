@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartModule } from 'primeng/chart';
-import { UserdataService } from '../userdata.service';
-import { userType } from '../user-type';
+import { UserdataService } from '../../services/userdata.service';
+import { userType } from '../../interfaces/user-type';
 import { FormsModule } from '@angular/forms';
 
 @Component({
