@@ -1,0 +1,25 @@
+<div id="chartContainer" class="h-auto w-full p-3 mt-10">
+  <!-- Heading, below, is to give the component a title -->
+  <h1 id="tableHeading" class="font-mono font-bold text-4xl">
+    Work<span class="underline decoration-[#ff3366]">out Cha</span>rt
+  </h1>
+  <!-- Dropdown to select user -->
+  <div id="userOptionsContainer" class="mt-12">
+    <select
+      [(ngModel)]="selectedUserId"
+      (change)="updateChartData()"
+      class="h-14 w-60 p-3 border-2 border-black rounded-full text-lg font-semibold"
+    >
+      @for(user of users; track user.id){
+      <option [value]="user.name">
+        {{ user.name }}
+      </option>
+      }
+    </select>
+  </div>
+
+  <!-- Chart Display -->
+  <div id="card">
+    <p-chart type="bar" [data]="chartData" [options]="chartOptions"></p-chart>
+  </div>
+</div>

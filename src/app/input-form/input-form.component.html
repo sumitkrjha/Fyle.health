@@ -1,0 +1,88 @@
+<!--    Purpose: This component has 2 purpose, as mentioned below: -
+        1. To Display the hero text and a descriptive sentence to give the user idea of the application
+        2. Input form that takes the input from the user, such as userName, workoutType and workoutDuration
+        (To know more about the form details please go to the input-form-component.ts file)
+  "-->
+<section id="heroSection" class="w-full h-full p-10 flex">
+  <!-- Div with the id "heroContainer" is fulfilling the purpose no 1, stated above, restated below: -
+       -> To Display the hero text and a descriptive sentence to give the user idea of the application
+    -->
+  <div
+    id="heroContainer"
+    class="h-auto basis-1/2 flex flex-col items-center justify-center px-14 py-24 gap-5"
+  >
+    <h1 id="heroText" class="h-auto w-full text-5xl font-serif font-semibold">
+      Fitness Tracker <br />That
+      <span class="underline decoration-yellow-400">You</span>
+      Deserve
+    </h1>
+    <p id="heroDescription" class="h-auto w-full text-xl text-[#393a54]">
+      Track your fitness by entering your name, choosing a workout type, and
+      setting the duration, with an interactive table to search and filter your
+      data.
+    </p>
+  </div>
+
+  <!-- Div with the id "formContainer" is fulfilling the purpose no 2, restated below: -
+       -> Input form that takes the input from the user, such as userName, workoutType and workoutDuration
+
+       Elements: -
+       1. Input to take userName, workoutType and workoutDuration.
+       2. Save Button to save the user input in the localStorage.
+    -->
+
+  <div id="formContainer" class="h-auto basis-1/2 py-10 px-20">
+    <h1 id="formHeading" class="font-mono font-bold text-4xl mb-3">
+      Work<span class="underline decoration-[#ff3366]">out De</span>tails
+    </h1>
+    <div id="inputForm" class="flex flex-col p-3 gap-2">
+      <label for="username" class="text-lg font-serif">Username</label>
+      <input
+        id="username"
+        type="text"
+        [(ngModel)]="username"
+        placeholder="Enter your name"
+        class="h-12 w-full py-2 px-3 border-2 border-black rounded-full placeholder:text-md placeholder:text-gray-900"
+      />
+      <label for="username" class="text-lg font-serif">Workout Type</label>
+      <select
+        id="workoutType"
+        [(ngModel)]="workoutType"
+        class="h-12 w-full py-2 px-3 border-2 border-black rounded-full text-md"
+      >
+        <option value="" disabled selected class="text-md">
+          Select a workout
+        </option>
+        <option value="Yoga" class="text-md">Yoga</option>
+        <option value="Running" class="text-md">Running</option>
+        <option value="Cycling" class="text-md">Cycling</option>
+        <option value="Swimming" class="text-md">Swimming</option>
+      </select>
+
+      <label for="username" class="text-lg font-serif">Workout Duration</label>
+      <input
+        id="workoutDuration"
+        type="number"
+        [(ngModel)]="workoutDuration"
+        placeholder="Enter in minutes"
+        class="h-12 w-full py-2 px-3 border-2 border-black rounded-full placeholder:text-md placeholder:text-gray-900"
+      />
+    </div>
+    <a href="#workoutTable">
+      <button
+        type="submit"
+        (click)="saveUser()"
+        class="w-auto h-auto py-3 px-5 ml-3 mt-2 border-2 border-[#ff3366] rounded-full cursor-pointer font-semibold hover:bg-[#ff3366] hover:text-white hover:shadow-md hover:shadow-[#ff3366]"
+      >
+        Add Workout
+      </button>
+    </a>
+    <button
+      type="reset"
+      (click)="resetForm()"
+      class="w-auto h-auto py-3 px-5 ml-3 mt-2 text-white border-2 border-[#ff3366] bg-[#ff3366] rounded-full cursor-pointer font-semibold hover:bg-white hover:text-black hover:shadow-md hover:shadow-[#ff3366]"
+    >
+      Clear Form
+    </button>
+  </div>
+</section>

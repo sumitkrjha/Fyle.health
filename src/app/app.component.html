@@ -1,0 +1,45 @@
+<div class="w-full h-full bg-[#ebf3fd] py-5 px-32 flex flex-col gap-2">
+  <!--  Below header tag is representing the header of the web application It will have display two tags: -
+        1. Image and title of the application
+        2. Button linked to the GitHub repo of the application 
+  -->
+  <header class="w-full h-16 p-5 gap-2 flex items-center justify-between">
+    <div id="logo" class="flex items-center justify-center gap-1">
+      <img src="/fylelogo.JPG" alt="logo" class="h-10 w-10" />
+      <h2 class="font-mono font-bold text-2xl">
+        fyle.<span class="font-mono font-medium">Health</span>
+      </h2>
+    </div>
+    <a href="https://github.com/sumitkrjha/Fyle.health" target="_blank">
+      <button
+        id="githubLink"
+        class="bg-[#24292F] hover:bg-[#1a1c20] font-medium rounded-full text-sm h-12 w-32 p-4 gap-2 flex items-center justify-center cursor-pointer hover:shadow-lg hover:shadow-[#1a1c20]"
+      >
+        <img src="/github.svg" alt="github logo" class="h-6 w-6" />
+        <span class="text-white">GitHub</span>
+      </button>
+    </a>
+  </header>
+  <!--  App-input-form component below, path="./app/input-form/input-form-component.ts
+        Purpose: This component has 2 purpose, as mentioned below: -
+        1. To Display the hero text and a descriptive sentence to give the user idea of the application
+        2. Input form that takes the input from the user, such as userName, workoutType and workoutDuration
+        (To know more about the form details please go to the input-form-component.ts file)
+  "-->
+  <app-input-form></app-input-form>
+
+  <!-- App-table component, path="./app/table/table.component.ts" 
+       Purpose: The purpose is to display the users in a tabular manner.
+       
+       It has 3 features: -
+       1. Search by username
+       2. Filter by workout Type
+       3. Pagination 
+  -->
+  <app-table></app-table>
+
+  <!-- App-chart component, path="./app/chart/chart.component.ts" 
+       Purpose: The purpose is to display the duration spend on workout types by user.
+  -->
+  <app-chart></app-chart>
+</div>

@@ -1,0 +1,123 @@
+<!-- Section id "tableContainer" is the container that contains 4 elements, explained below: - 
+     1. A text to describe the component
+     2. A search bar where user can search by username
+     3. A filter dropdown where user can filter by workout type(e.g., yoga, cycling)
+     4. A table with pagination feature to display details in below mentioned order (row-wise): -
+        4.1. Username
+        4.2. Workout type
+        4.3. Workout duration
+-->
+<section id="tableContainer" class="h-auto w-full p-5">
+  <!-- Heading, below, is to give the component a title -->
+  <h1 id="tableHeading" class="font-mono font-bold text-4xl mb-3">
+    Work<span class="underline decoration-[#ff3366]">out Ta</span>ble
+  </h1>
+
+  <!-- Div with id "searchAndFilterContainer" this div contains 3 elements:-
+       1. A search input box facilitating search by username.
+       2. A select option to select the workout type facilitating filter by workout type.
+       3. A reset button which will reset the filter and search box
+  -->
+  <div id="searchAndFilterContainer" class="w-full h-auto p-5">
+    <!-- Search by Username -->
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="getFilteredUsers()"
+      placeholder="Search by Username"
+      class="h-12 w-60 px-4 border-2 border-black rounded-full placeholder:text-md placeholder:text-black"
+    />
+
+    <!-- Filter by Workout Type -->
+    <select
+      [(ngModel)]="selectedWorkoutType"
+      (change)="getFilteredUsers()"
+      class="h-12 w-60 ml-3 py-2 px-3 border-2 border-black rounded-full text-md cursor-pointer"
+    >
+      <option value="" disabled selected>Select Workout Type</option>
+      <option value="Yoga">Yoga</option>
+      <option value="Running">Running</option>
+      <option value="Cycling">Cycling</option>
+      <option value="Swimming">Swimming</option>
+    </select>
+
+    <!-- Button to reset the search and filter -->
+    <button
+      (click)="resetFilters()"
+      class="w-auto h-auto py-3 px-5 ml-3 mt-2 text-white border-2 border-[#ff3366] bg-[#ff3366] rounded-full cursor-pointer font-semibold hover:bg-white hover:text-black hover:shadow-md hover:shadow-[#ff3366]"
+    >
+      Reset Search & Filters
+    </button>
+  </div>
+
+  <!-- Div with id "workoutTable" is used to display user details from localStorage-->
+  <div id="workoutTable" class="w-full h-full p-5">
+    <div class="overflow-x-auto rounded-t-xl">
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+        <thead class="text-lg font-mono text-black bg-slate-400">
+          <tr>
+            <th scope="col" class="px-6 py-3">User Name</th>
+            <th scope="col" class="px-6 py-3">Workouts</th>
+            <th scope="col" class="px-6 py-3">Workouts Count</th>
+            <th scope="col" class="px-6 py-3">Total Workout Minutes</th>
+          </tr>
+        </thead>
+        <tbody class="bg-slate-800">
+          @for(user of getPaginatedUsers(); track user.id){
+          <tr class="bg-[#ebf3fd] text-black">
+            <th scope="row" class="px-6 py-4">{{ user.name }}</th>
+            <td class="px-6 py-4">{{ user.workouts }}</td>
+            <td class="px-10 py-4">{{ user.workoutCount }}</td>
+            <td class="px-10 py-4">{{ user.totalMinutes }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--Below element contains Table Pagination option.
+      1. It has 2 buttons, first one to go to the previous table page and last one to go to the next table page.
+      2. One dynamic counter showing=> current page/ total pages 
+      3. One select element to change the row per page.
+  -->
+  <!-- Pagination controls -->
+  <div class="flex items-center justify-between mt-4">
+    <!-- Items per page selection -->
+    <div>
+      <label for="itemsPerPage" class="mr-2">Items per page:</label>
+      <select
+        [(ngModel)]="itemsPerPage"
+        (change)="onItemsPerPageChange()"
+        class="py-2 px-3 border-2 border-black rounded-full"
+      >
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+      </select>
+    </div>
+
+    <!-- Pagination counter -->
+    <div>
+      <span>{{ currentPage }} / {{ totalPages }}</span>
+    </div>
+
+    <!-- Pagination buttons -->
+    <div>
+      <button
+        (click)="previousPage()"
+        [disabled]="currentPage === 1"
+        class="py-2 px-4 bg-[#ff3366] text-white rounded-full cursor-pointer disabled:bg-gray-500 disabled:cursor-not-allowed"
+      >
+        Previous
+      </button>
+      <button
+        (click)="nextPage()"
+        [disabled]="currentPage === totalPages"
+        class="py-2 px-4 bg-[#ff3366] text-white rounded-full cursor-pointer disabled:bg-gray-500 disabled:cursor-not-allowed"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</section>
